@@ -1,0 +1,8 @@
+- name: Install gnome-tweaks
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: gnome-tweaks
+    update_cache: yes

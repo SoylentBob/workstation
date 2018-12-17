@@ -1,0 +1,16 @@
+- name: Add git ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "ppa:git-core/ppa"
+
+- name: Install git
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: git
+    update_cache: yes

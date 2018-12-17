@@ -1,0 +1,8 @@
+- name: Install vlc
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: vlc
+    update_cache: yes

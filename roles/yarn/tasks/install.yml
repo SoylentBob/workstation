@@ -1,0 +1,25 @@
+- name: Add yarn apt key
+
+  become: true
+  remote_user: root
+
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    state: present
+
+- name: Add yarn ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
+
+- name: Install yarn
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: yarn
+    update_cache: yes

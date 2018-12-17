@@ -1,0 +1,9 @@
+- hosts: all
+  connection: local
+  
+  roles:
+    - common
+    - desktop
+    - xps
+    - development
+    - media

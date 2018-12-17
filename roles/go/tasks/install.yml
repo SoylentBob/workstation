@@ -1,0 +1,16 @@
+- name: Add go ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "ppa:longsleep/golang-backports"
+
+- name: Install golang
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: golang-go
+    update_cache: yes

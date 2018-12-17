@@ -1,0 +1,35 @@
+- name: Add docker apt key
+
+  become: true
+  remote_user: root
+
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add docker ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "deb https://download.docker.com/linux/ubuntu xenial stable"
+
+- name: Install docker
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: docker-ce
+    update_cache: yes
+
+- name: Add to group
+
+  become: true
+  remote_user: root
+
+  user:
+    name: "{{username}}"
+    groups: docker
+    append: yes

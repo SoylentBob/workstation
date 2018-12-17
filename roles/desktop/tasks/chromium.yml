@@ -1,0 +1,8 @@
+- name: Install chromium-browser
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: chromium-browser
+    update_cache: yes

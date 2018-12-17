@@ -1,0 +1,16 @@
+- name: Add pop-theme ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "ppa:system76/pop"
+
+- name: Install pop-theme
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: pop-theme
+    update_cache: yes

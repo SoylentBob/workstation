@@ -1,0 +1,16 @@
+- name: Add atom ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "ppa:webupd8team/atom"
+
+- name: Install atom
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: atom
+    update_cache: yes

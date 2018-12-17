@@ -1,0 +1,16 @@
+- name: Install essentials
+
+  become: true
+  remote_user: root
+
+  apt:
+    name:
+      - tmux
+      - fwupd
+      - vim
+      - build-essential
+      - nmap
+      - curl
+      - jq
+
+    update_cache: yes

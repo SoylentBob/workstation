@@ -1,0 +1,26 @@
+- name: Add dbeaver apt key
+
+  become: true
+  remote_user: root
+
+  apt_key:
+    url: https://dbeaver.io/debs/dbeaver.gpg.key
+    state: present
+
+
+- name: Add dbeaver ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "deb https://dbeaver.io/debs/dbeaver-ce /"
+
+- name: Install dbeaver
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: dbeaver-ce
+    update_cache: yes

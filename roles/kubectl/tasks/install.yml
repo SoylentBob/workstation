@@ -1,0 +1,31 @@
+- name: Add kubernetes apt key
+
+  become: true
+  remote_user: root
+
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add kubernetes ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "deb https://apt.kubernetes.io/ kubernetes-xenial main"
+
+- name: Install kubectl
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: kubectl
+    update_cache: yes
+
+- name: kubectl autocomplete
+
+  lineinfile:
+    path: ~/.bashrc
+    line: source <(kubectl completion bash)

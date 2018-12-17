@@ -1,0 +1,17 @@
+- name: Create .tmux folder
+  file:
+    path: "/home/{{username}}/.tmux"
+    state: directory
+    mode: 0755
+
+- name: Copy .tmux.conf
+  copy:
+    src: files/.tmux.conf
+    dest: "/home/{{username}}/.tmux/.tmux.conf"
+
+- name: Copy .tmux.conf.local
+  copy:
+    src: files/.tmux.conf.local
+    dest: "/home/{{username}}/.tmux.conf.local"
+
+  notify: Create .tmux.conf symlink

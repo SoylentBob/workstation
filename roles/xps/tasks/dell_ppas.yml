@@ -1,0 +1,12 @@
+- name: Add dell ppas
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "{{item}}"
+
+  with_items:
+    - "deb http://dell.archive.canonical.com/updates/ xenial-dell public"
+    - "deb http://dell.archive.canonical.com/updates/ xenial-dell-service public"
+    #- "deb http://dell.archive.canonical.com/updates/ xenial-dell-oem public"

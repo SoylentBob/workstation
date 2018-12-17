@@ -1,0 +1,16 @@
+- name: Add ansible ppa
+
+  become: true
+  remote_user: root
+
+  apt_repository:
+    repo: "ppa:ansible/ansible"
+
+- name: Install ansible
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: ansible
+    update_cache: yes

@@ -1,0 +1,4 @@
+---
+  - import_tasks: pop_theme.yml
+  - import_tasks: gnome_tweaks.yml
+  - import_tasks: chromium.yml
