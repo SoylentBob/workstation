@@ -12,5 +12,7 @@
       - nmap
       - curl
       - jq
+      - tree
+      - whois
 
     update_cache: yes
