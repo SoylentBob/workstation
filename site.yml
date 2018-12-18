@@ -1,8 +1,8 @@
 - hosts: all
   connection: local
-  
+
   roles:
-    - common
+    - essentials
     - desktop
     - xps
     - development
