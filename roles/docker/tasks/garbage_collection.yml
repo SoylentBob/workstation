@@ -2,4 +2,5 @@
   cron:
     name: "docker gc"
     hour: "*"
+    minute: 0
     job: "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc -e REMOVE_VOLUMES=1 spotify/docker-gc"
