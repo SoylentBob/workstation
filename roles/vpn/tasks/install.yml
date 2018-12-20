@@ -1,10 +1,9 @@
-- name: Install vpnc
+- name: Install ike
 
   become: true
   remote_user: root
 
   apt:
     name:
-      - vpnc
-      - network-manager-vpnc-gnome
+      - ike
     update_cache: yes
