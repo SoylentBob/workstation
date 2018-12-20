@@ -1,0 +1,10 @@
+- name: Install vpnc
+
+  become: true
+  remote_user: root
+
+  apt:
+    name:
+      - vpnc
+      - network-manager-vpnc-gnome
+    update_cache: yes
