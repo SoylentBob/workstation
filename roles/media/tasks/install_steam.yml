@@ -1,0 +1,8 @@
+- name: Install steam
+
+  become: true
+  remote_user: root
+
+  apt:
+    name: steam
+    update_cache: yes
