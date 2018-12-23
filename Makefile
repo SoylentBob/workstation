@@ -4,4 +4,7 @@ apply: /usr/bin/ansible
 /usr/bin/ansible:
 	sudo apt-get install ansible
 
+lint:
+	ansible-lint -R site.yml
+
 .PHONY: apply
