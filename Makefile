@@ -7,4 +7,4 @@ apply: /usr/bin/ansible
 lint:
 	ansible-lint -R -x 405 site.yml
 
-.PHONY: apply
+.PHONY: apply lint
