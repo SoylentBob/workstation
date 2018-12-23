@@ -4,7 +4,7 @@
   remote_user: root
 
   apt_repository:
-    repo: "{{item}}"
+    repo: "{{ item }}"
 
   with_items:
     - "deb http://dell.archive.canonical.com/updates/ xenial-dell public"
