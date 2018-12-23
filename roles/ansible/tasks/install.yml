@@ -12,5 +12,14 @@
   remote_user: root
 
   apt:
-    name: ansible
+    name:
+      - ansible
+      - python-pip
     update_cache: yes
+
+- name: Install ansible-lint
+  become: true
+  remote_user: root
+
+  pip:
+    name: ansible-lint
