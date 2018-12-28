@@ -1,0 +1,11 @@
+- name: Install codecs and video players
+
+  become: true
+  remote_user: root
+
+  apt:
+    name:
+      - ubuntu-restricted-extras
+      - vlc
+      - ffmpeg
+    update_cache: yes
