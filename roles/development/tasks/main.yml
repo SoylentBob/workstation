@@ -24,3 +24,6 @@
 
 - include_role:
     name: go
+
+- include_role:
+    name: zeal
