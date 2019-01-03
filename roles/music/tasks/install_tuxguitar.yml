@@ -1,0 +1,11 @@
+- name: Install tuxguitar
+
+  become: true
+  remote_user: root
+
+  apt:
+    name:
+      - tuxguitar
+      - timidity
+
+    update_cache: yes
