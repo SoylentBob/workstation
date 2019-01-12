@@ -13,6 +13,17 @@
 
     update_cache: yes
 
+- name: Install build tools
+
+  become: true
+  remote_user: root
+
+  apt:
+    name:
+      - gradle
+
+    update_cache: yes
+
 - name: Install scala
 
   become: true
