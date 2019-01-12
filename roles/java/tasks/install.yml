@@ -10,5 +10,15 @@
       - openjdk-11-doc
       - openjdk-11-jre-headless
       - openjdk-11-source
-      
+
+    update_cache: yes
+
+- name: Install scala
+
+  become: true
+  remote_user: root
+  apt:
+    name:
+      - scala
+
     update_cache: yes
