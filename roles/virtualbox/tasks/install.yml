@@ -1,0 +1,9 @@
+- name: Install virtualbox
+
+  become: true
+  remote_user: root
+
+  apt:
+    name:
+      - virtualbox
+    update_cache: yes
